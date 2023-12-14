@@ -50,25 +50,27 @@ $json = json_encode($csv, JSON_UNESCAPED_UNICODE);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>管理者画面（参加者一覧）</title>
+  <!-- bulmaの読み込み -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 
 <body>
 
-  <fieldset>
-    <legend>管理者画面（参加者一覧）</legend>
-    <a href="reserve_txt_input.php">入力画面</a>
-    <table>
-      <thead>
-        <tr>
-          <th>参加者氏名</th>
-          <th>フリガナ</th>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
+<p>管理者画面（参加者一覧）</p>
+<a href="reserve_txt_input.php">入力画面へ</a>
 
-  </fieldset>
+<!-- 集計表を表示する場所 -->
+<div id="total"></div>
+
+<table>
+  <tr>
+    <th>参加人数（３日間合計）</th>
+  </tr>
+  <tr>
+    <th id="guestTotal"></th>
+    <th>人</th>
+  </tr>
+</table>
 
   <div>
     <!-- チャートjsを表示する場所 -->
@@ -77,11 +79,25 @@ $json = json_encode($csv, JSON_UNESCAPED_UNICODE);
 
   <!-- チャートjs読み込み -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- jQuery一応入れる -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <script>
+// PHPからJSON
 const jsonArray = <?=json_encode($json)?>;
 console.log(jsonArray);
 
+//JSONを配列に戻す
+const array = JSON.parse(jsonArray);
+// console.log(array);
+
+console.log(array.length);
+const guestTotal = array.length;
+$("#guestTotal").text(guestTotal);
+
+array.forEach((value, index) => {
+	console.log(index, value);
+});
 
 </script>
 

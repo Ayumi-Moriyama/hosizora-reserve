@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ふたご座流星群観察会</title>
+     <!-- bulmaの読み込み -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 <body>
     <h1>ふたご座流星群観察会 2023</h1>
@@ -15,7 +17,7 @@
         <p>参加者には、温かいドリンクをご提供いたします。（1杯目は無料。2杯目以降は有料。）</p>
         <p>温かい飲み物を飲みながら、星空を眺めてみませんか。</p>
     </div>
-    <a href="reserve_txt_input.php">申込はこちらから</a>
+    <a href="reserve_txt_input.php" class="button is-warning is-medium">申込はこちらから</a>
     <div>
         <p>提供ドリンク</p>
         <ul>

@@ -5,9 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>イベント予約情報入力画面</title>
+  <!-- bulmaの読み込み -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 
 <body>
+<a href="hosizora.php" class="button is-primary is-small">イベントページに戻る</a>
+
   <form action="reserve_txt_create.php" method="POST">
     <fieldset>
       <legend>予約情報入力画面</legend>
@@ -76,7 +80,7 @@
       </div>
     </fieldset>
   </form>
-<a href="hosizora.php">イベントページに戻る</a>
+
 <a href="reserve_txt_read.php">管理者画面へ</a>
 </body>
 
